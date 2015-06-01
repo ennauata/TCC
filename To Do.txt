@@ -1,0 +1,5 @@
+To Do:
+
+- Write script for creating all seq file
+
+- Try to run CNN Model}

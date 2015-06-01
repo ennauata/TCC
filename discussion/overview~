@@ -1,0 +1,18 @@
+My first impression of torch was not so good, I had to get used to lua scripting and both the lua language and torch library had very poor documentation.
+I decided to change the tools used in this project, to make to progress faster and safier. Now, I am using CAFFE, numpy and C++.
+
+When I was extracting the video features I found that the difference in their lengths might be an issue to feed the first model of the convolutional neural network.
+
+By searching over some papers and asking to some experts I found three reasonable approaches:
+
+1- Taking the average among the frames:
+
+	This approach includes the time dimension into the averaged pixels, which can lead to some imprecision. First, the length and speed of actions would not be precisely considered. 
+
+2- Streching the videos:
+	
+	In this approach the speed of actions would not be considered neither the length, however this would represent more precisely the different frames, since we are not just taking an average.
+
+3- Take some fixed block of frames: 
+
+	The duration of the action would not be included as well, however the speed of the action would be included as well as the representation of the different frames would be more consistent. The downside of this approach would be we would be cutting off some valuable data and we might be taking a not meaninful block of frames for classifying the video.
